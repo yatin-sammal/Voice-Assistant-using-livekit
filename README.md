@@ -1,4 +1,4 @@
-# Hybrid Image Query Voice Assistant - Lohit Gandham
+# Hybrid Image Query Voice Assistant
 
 ## Overview
 
