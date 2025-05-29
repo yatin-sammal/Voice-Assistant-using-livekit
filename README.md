@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository provides a solution to integrate a hybrid image processing system for **RoboLohit**, the real-time personalized assistant for the blind and visually impaired. The system dynamically switches between a proprietary model (e.g., GPT-4o) and an open-source model (**Groq LLaMA 3.2-11B Vision Preview**) based on the presence of a person in the image. The Groq model is used to describe images containing people, circumventing proprietary model guardrails, while maintaining high reliability and low latency.
+This repository provides a solution to integrate a hybrid image processing system for **Robo**, the real-time personalized assistant for the blind and visually impaired. The system dynamically switches between a proprietary model (e.g., GPT-4o) and an open-source model (**Groq LLaMA 3.2-11B Vision Preview**) based on the presence of a person in the image. The Groq model is used to describe images containing people, circumventing proprietary model guardrails, while maintaining high reliability and low latency.
 
 ---
 
@@ -175,7 +175,7 @@ This project currently uses Deepgram for speech-to-text transcription. However, 
 ## Additional Modifications (Opitional)
 
 ### Chaning the Open Source Model
- As mentioned eariler I use the **Groq LLaMA 3.2-11B Vision Preview** model for person based detection and decriptions. Using the same grok api we can also choose the more powerful model **Groq LLaMA 3.2-90B Vision Preview**, which use 90B paramter. This can be done by modifiying the `initialization.py` file in the `Initialization` class under the method `setting_open_llm()` from `"llama-3.2-11b-vision-preview"` to `"llama-3.2-90b-vision-preview"`. 
+ As mentioned eariler I use the **Groq LLaMA 3.2-11B Vision Preview** model for person based detection and decriptions. Using the same groq api we can also choose the more powerful model **Groq LLaMA 3.2-90B Vision Preview**, which use 90B paramter. This can be done by modifiying the `initialization.py` file in the `Initialization` class under the method `setting_open_llm()` from `"llama-3.2-11b-vision-preview"` to `"llama-3.2-90b-vision-preview"`. 
 
  ![Alt Text](images/pic1.png)
 
@@ -202,7 +202,7 @@ As you can see from the figure above, the open source LLM model (`grok`) is able
 ## Challenges Encountered
 
 - **Limited Availability of Open Source LLMs**:
-  - There were few open-source LLMs that were OpenAI-compatible within the LiveKit framework and also supported vision. I found **LLaVA**, which works within the Ollama framework but needed to be run locally.
+  - There were few open-source LLMs that were OpenAI-compatible within the LiveKit framework and also supported vision. I found **LLaMA**, which works within the Ollama framework but needed to be run locally.
   - I opted for the **Groq Cloud Models**, where the **Groq LLaMA 3.2-11B Vision Preview** and **Groq LLaMA 3.2-90B Vision Preview** were the only available vision options. However, these models were not compatible with the LiveKit framework.
 
 - **Custom Compatibility Solution**:
